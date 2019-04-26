@@ -26,9 +26,16 @@ interface EventStore
      * @param string $aggregateType
      * @param string $aggregateId
      * @param int $minVersion
+     * @param int|null $maxVersion
      * @return \Iterator GenericEvent[]
      */
-    public function loadAggregateEvents(string $streamName, string $aggregateType, string $aggregateId, int $minVersion = 1): \Iterator;
+    public function loadAggregateEvents(
+        string $streamName,
+        string $aggregateType,
+        string $aggregateId,
+        int $minVersion = 1,
+        int $maxVersion = null
+    ): \Iterator;
 
     /**
      * @param string $streamName
