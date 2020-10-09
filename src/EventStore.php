@@ -50,4 +50,20 @@ interface EventStore
      * @return \Iterator GenericEvent[]
      */
     public function loadEventsByCausationId(string $streamName, string $causationId): \Iterator;
+
+    /**
+     * @param string $streamName
+     * @param int $skip
+     * @param int $limit
+     * @return \Iterator
+     */
+    public function loadStreamEvents(string $streamName, int $skip, int $limit): \Iterator;
+
+    /**
+     * @param string $streamName
+     * @param int $skip
+     * @param int $limit
+     * @return \Iterator
+     */
+    public function loadStreamEventsReverse(string $streamName, int $skip, int $limit): \Iterator;
 }
