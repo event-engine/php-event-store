@@ -54,16 +54,16 @@ interface EventStore
     /**
      * @param string $streamName
      * @param int $skip
-     * @param int $limit
+     * @param int|null $limit
      * @return \Iterator
      */
-    public function loadStreamEvents(string $streamName, int $skip, int $limit): \Iterator;
+    public function loadStreamEvents(string $streamName, int $skip = 0, int $limit = null): \Iterator;
 
     /**
      * @param string $streamName
      * @param int $skip
-     * @param int $limit
+     * @param int|null $limit
      * @return \Iterator
      */
-    public function loadStreamEventsReverse(string $streamName, int $skip, int $limit): \Iterator;
+    public function loadStreamEventsReverse(string $streamName, int $skip = 0, int $limit = null): \Iterator;
 }
