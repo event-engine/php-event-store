@@ -15,7 +15,7 @@ use EventEngine\EventStore\Stream\WatcherId;
 
 interface EventStream
 {
-    public function watch(string $streamName, callable $onEvent, string $lastEventId = null): WatcherId;
+    public function watch(string $streamName, callable $onEvent, ?string $lastEventId = null): WatcherId;
 
     public function stopWatcher(WatcherId $watcherId): void;
 }
